@@ -10,5 +10,9 @@ def print_average_reads_length(average: int) -> None:
     print(f'Reads sequence average length = {average}')
 
 
+def print_repeats(num: int) -> None:
+    print(f'\nRepeats = {num}')
+
+
 def print_gc_average_content(percentage: float) -> None:
     print(f'\nGC content average = {percentage}%')
