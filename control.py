@@ -3,7 +3,7 @@ from file_content import FileContent
 
 
 path = ui.ask_file()
-with open(path, 'r') as file:  # data[1::self.READ]
+with open("tmp/" + path, 'r') as file:  # data[1::self.READ]
     reads_dict = {}
     for line in file.readlines()[1::4]:
         reads_dict[line.strip()] = reads_dict.get(line.strip(), 0) + 1
