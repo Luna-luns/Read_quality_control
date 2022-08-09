@@ -25,15 +25,17 @@ class FileContent:
         average = self.calculate_average_read_gc()
         return round(sum(average) / self.reads_number * 100, 2)
 
-    def check_repeats(self) -> bool:
-        return bool(self.reads_number > len(self.data))
-
-    # def make_repeats_dict(self) -> dict:
-    #     repeats_dict = {}
-    #     for elem in self.sequence:
-    #         repeats_dict[elem] = repeats_dict.get(elem, 0) + 1
-    #
-    #     return repeats_dict
-
     def count_repeats(self) -> int:
         return self.reads_number - len(self.data)
+
+    def calculate_read_n(self):
+        n = self.count_nucleotides('N')
+        average_read_n = [n[i] / self.reads_length[i] for i in range(len(n))]
+        return round(sum(average_read_n) / self.reads_number * 100, 2)
+
+    def count_n_reads(self) -> int:
+        count = 0
+        for key in self.data.keys():
+            if 'N' in key:
+                count += 1
+        return count

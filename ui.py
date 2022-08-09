@@ -3,7 +3,7 @@ def ask_file() -> str:
 
 
 def print_reads_number(number: int) -> None:
-    print(f'Reads in the file = {number}:')
+    print(f'Reads in the file = {number}')
 
 
 def print_average_reads_length(average: int) -> None:
@@ -16,3 +16,11 @@ def print_repeats(num: int) -> None:
 
 def print_gc_average_content(percentage: float) -> None:
     print(f'\nGC content average = {percentage}%')
+
+
+def print_average_read_n(percentage: float) -> None:
+    print(f'Ns per read sequence = {percentage}%')
+
+
+def print_reads_n_number(num: int) -> None:
+    print(f'Reads with Ns = {num}')
